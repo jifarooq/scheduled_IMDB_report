@@ -59,13 +59,13 @@ def scrape_movies(url):
 def send_simple_message(body):
   sandbox_id = "INSERT_MAILGUN_SANDBOX_ID"
   api_url    = "https://api.mailgun.net/v3/sandbox" + sandbox_id + ".mailgun.org/messages"
-  api_key    = "key-INSERT_MAILGUN_API_KEY"
+  api_key    = "INSERT_MAILGUN_API_KEY"
 
   return requests.post(
     api_url,
     auth=("api", api_key),
     data={"from"   : "mailgun me <postmaster@sandbox" + sandbox_id + ".mailgun.org>",
-          "to"     : "Justin <justinfarooq@gmail.com>",
+          "to"     : "INSERT_RECIPIENT_EMAIL_ADDRESS",
           "subject": "Movie releases this week",
           "html"   : body })
 
